@@ -64,14 +64,18 @@ print(number_list.num_list[position])
 
 # Find the number of prime numbers in num_list?
 # Hint: One way is to just start removing the ones that aren't
+"""
 count = 0
 for number in number_list.num_list:
-    for j in range(2, int(number)/2): # this does not work but i do not understand why
+    number_2 = int(number)
+    for j in range(2, number_2/2): # this does not work but i do not understand why
         if number_list % j != 0:
             count += 1
             break
-print(count)
 
+print("check")
+print(count)
+"""
 # Find the number of palindromes
 # Hint: This may be easier to do with strings
 count = 0
@@ -80,6 +84,7 @@ for number in number_list.num_list:
     backward = forward[::-1]
     if forward == backward:
         count += 1
+print("check")
 print(count)
 
 
