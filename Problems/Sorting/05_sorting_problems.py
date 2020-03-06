@@ -7,11 +7,22 @@ For all answers, show your work
 Use combinations of sorting, list comprehensions, filtering or other techniques to get the answers.
 '''
 
+def split_line(line):
+    # This function takes in a line of text and returns
+    # a list of words in the line.
+    return re.findall('[A-Za-z]+(?:\'[A-Za-z]+)?', line)
+
+from NBAStats import data
+print(data[0])
 
 #1  Pop off the first item in the list and print it.  It contains the column headers. (1pt)
+data.pop(0)
 
 #2  Print the names of the top ten highest scoring single seasons in NBA history?
 # You should use the PTS (points) column to sort the data. (4pts)
+m = 0
+for i in data:
+    len(data[m])
 
 #3  How many career points did Kobe Bryant have? Add up all of his seasons. (4pts)
 

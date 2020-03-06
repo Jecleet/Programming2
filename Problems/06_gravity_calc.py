@@ -7,9 +7,22 @@
 # m2 is the mass of the second object in kg
 # r is the center to center distance between the objects in meters
 
+done = False
 
 # Make a calculator that does all of the following
 # (3pts) takes the inputs for mass 1, mass 2, and distance between the two objects (m1, m2, and r)
+mass_1 = input("Insert Mass 1 ...")
+while not done == True:
+    try:
+        int(mass_1)
+        2/mass_1
+        done = True
+    except:
+        print("invalid mass")
+        mass_1 = input("Insert Mass...")
+mass_2 = input("Insert Mass 2 ...")
+
+
 # (4pts) contains exceptions for any potential errors (value and dividebyzero).
 # (2pts) keeps asking for inputs until they are valid (see while loop from notes)
 # (3pts) calculates the force of gravity in Newtons and print the result to the user in scientific notation to two decimals.
