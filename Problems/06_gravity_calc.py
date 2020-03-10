@@ -15,7 +15,7 @@ mass_1 = input("Insert Mass 1 ...")
 while not done == True:
     try:
         int(mass_1)
-        2/mass_1
+        2/mass_1q
         done = True
     except:
         print("invalid mass")
