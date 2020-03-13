@@ -56,14 +56,14 @@ def recursive_rect(width, height, depth):
 recursive_rect(800, 500, 10)
 my_screen.clear()
 
-
+'''
 def recursive_ncaa(x, y, height, depth):
     if depth > 0:
         my_turtle.up()
         my_turtle.goto(x, y)
         my_turtle.down()
         my_turtle.setheading(0)
-        my_turtle.forward(50)
+        my_turtle.forward(height)
         my_turtle.left(90)
         my_turtle.forward(height / 2)
         my_turtle.right(90)

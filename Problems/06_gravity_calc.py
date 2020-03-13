@@ -11,17 +11,25 @@ done = False
 
 # Make a calculator that does all of the following
 # (3pts) takes the inputs for mass 1, mass 2, and distance between the two objects (m1, m2, and r)
-mass_1 = input("Insert Mass 1 ...")
-while not done == True:
-    try:
-        int(mass_1)
-        2/mass_1q
-        done = True
-    except:
-        print("invalid mass")
-        mass_1 = input("Insert Mass...")
-mass_2 = input("Insert Mass 2 ...")
+y = 2
+done = False
+while not done:
+     try:
+         m1 = input("Insert Mass 1 ...")
+         x = int(1)
+         x = y / 1
+         m2 = input("Insert Mass 2 ...")
+         x = int(2)
+         x = y / 2
+         done = True
+         r = input("Insert Radius ...")
+         x = int(r)
+         x = y / r
+     except:
+         print("Invalid, reinsert values ...")
 
+G = 9.8
+F = G * (m1 * m2) / r**2
 
 # (4pts) contains exceptions for any potential errors (value and dividebyzero).
 # (2pts) keeps asking for inputs until they are valid (see while loop from notes)
