@@ -61,22 +61,9 @@ def recursive_htree(x, y, height, depth):
         recursive_htree(x - height, y + height, height / 2, depth - 1)
         recursive_htree(x - height, y - height, height / 2, depth - 1)
 
-recursive_htree(0, 0, 150, 4)
+#recursive_htree(0, 0, 150, 4)
 
 my_screen.clear()
-
-def plus_fractal(x, y, height, depth):
-    if depth > 0:
-        my_turtle.up()
-        my_turtle.goto(x, y)
-        my_turtle.down()
-        for i in range(5):
-            my_turtle.forward(height)
-            my_turtle.up()
-            my_turtle.goto(x, y)
-            my_turtle.down()
-            my_turtle.right(90)
-
 
 
 def snowflake_fractal(x, y, height, depth):
@@ -117,7 +104,7 @@ def snowflake_fractal(x, y, height, depth):
         snowflake_fractal(x - math.cos(math.pi / 3) * height, y - math.sin(math.pi / 3) * height, height / 3, depth - 1)
         snowflake_fractal(x - math.cos(2 * math.pi / 3) * height, y - math.sin(2 * math.pi / 3) * height, height / 3, depth - 1)
 
-snowflake_fractal(0, 0, 200, 4)
+#snowflake_fractal(0, 0, 200, 4)
 
 my_screen.clear()
 

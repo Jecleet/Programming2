@@ -13,23 +13,22 @@ done = False
 # (3pts) takes the inputs for mass 1, mass 2, and distance between the two objects (m1, m2, and r)
 y = 2
 done = False
+G = 6.7e-11
 while not done:
      try:
          m1 = input("Insert Mass 1 ...")
-         x = int(1)
-         x = y / 1
+         m1 = int(m1)
          m2 = input("Insert Mass 2 ...")
-         x = int(2)
-         x = y / 2
-         done = True
+         m2 = int(m2)
          r = input("Insert Radius ...")
-         x = int(r)
-         x = y / r
+         r = int(r)
+         F = G * (m1 * m2) / r ** 2
+         print(F)
+         done = True
+
      except:
          print("Invalid, reinsert values ...")
 
-G = 9.8
-F = G * (m1 * m2) / r**2
 
 # (4pts) contains exceptions for any potential errors (value and dividebyzero).
 # (2pts) keeps asking for inputs until they are valid (see while loop from notes)
