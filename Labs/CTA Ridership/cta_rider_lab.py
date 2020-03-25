@@ -16,9 +16,41 @@ It has been updated with 2018 data, but not yet with 2019 unfortunately
 '''
 
 import csv
+import matplotlib.pyplot as plt
 
 with open("CTA_-_Ridership_-_Annual_Boarding_Totals (1).csv") as f:
     cr = csv.reader(f)
     data = list(cr)
 
 print(data)
+print("data")
+data.pop(0)
+years = [x[0] for x in data]
+bus = [x[1] for x in data]
+rail = [x[3] for x in data]
+total = [x[4] for x in data]
+rail = rail[-10:]
+bus = bus[-10:]
+total = total[-10]
+print(years)
+print(bus)
+print(rail)
+print(total)
+
+plt.figure(1, tight_layout=True)
+
+
+year_numbers = [x for x in range(10)]
+
+plt.plot(year_numbers, rail, color='green', marker='*', markersize=10, linestyle='--', alpha=0.5)
+plt.plot(year_numbers, bus, color='red', marker='*', markersize=10, linestyle='--', alpha=0.5)
+plt.plot(year_numbers, total, color='blue', marker='*', markersize=10, linestyle='--', alpha=0.5)
+
+plt.xticks(year_numbers, years, rotation=45)  # replaces the shown values on the graph axis
+
+plt.axis([-1, 10, 0, 750000000])  # [xmin, xmax, ymin, ymax]
+plt.title("Rail Usage")
+plt.xlabel("Year", color='red', fontsize=20)
+plt.ylabel("Usage")
+
+plt.show()
