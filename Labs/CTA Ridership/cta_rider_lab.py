@@ -23,6 +23,7 @@ with open("CTA_-_Ridership_-_Annual_Boarding_Totals (1).csv") as f:
     data = list(cr)
 
 print(data)
+
 print("data")
 data.pop(0)
 years = [x[0] for x in data]
@@ -44,11 +45,12 @@ year_numbers = [x for x in range(10)]
 
 plt.plot(year_numbers, rail, color='green', marker='*', markersize=10, linestyle='--', alpha=0.5)
 plt.plot(year_numbers, bus, color='red', marker='*', markersize=10, linestyle='--', alpha=0.5)
-plt.plot(year_numbers, total, color='blue', marker='*', markersize=10, linestyle='--', alpha=0.5)
+#plt.plot(year_numbers, total, color='blue', marker='*', markersize=10, linestyle='--', alpha=0.5)
 
-plt.xticks(year_numbers, years, rotation=45)  # replaces the shown values on the graph axis
 
 plt.axis([-1, 10, 0, 750000000])  # [xmin, xmax, ymin, ymax]
+plt.xticks(year_numbers, years, rotation=45)  # replaces the shown values on the graph axis
+
 plt.title("Rail Usage")
 plt.xlabel("Year", color='red', fontsize=20)
 plt.ylabel("Usage")
