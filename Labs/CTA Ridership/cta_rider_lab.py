@@ -32,7 +32,7 @@ rail = [x[3] for x in data]
 total = [x[4] for x in data]
 rail = rail[-10:]
 bus = bus[-10:]
-total = total[-10]
+total = total[-10:]
 print(years)
 print(bus)
 print(rail)
@@ -45,10 +45,10 @@ year_numbers = [x for x in range(10)]
 
 plt.plot(year_numbers, rail, color='green', marker='*', markersize=10, linestyle='--', alpha=0.5)
 plt.plot(year_numbers, bus, color='red', marker='*', markersize=10, linestyle='--', alpha=0.5)
-#plt.plot(year_numbers, total, color='blue', marker='*', markersize=10, linestyle='--', alpha=0.5)
+plt.plot(year_numbers, total, color='blue', marker='*', markersize=10, linestyle='--', alpha=0.5)
 
 
-plt.axis([-1, 10, 0, 750000000])  # [xmin, xmax, ymin, ymax]
+plt.axis([-1, 10, 0, 75000000])  # [xmin, xmax, ymin, ymax]
 plt.xticks(year_numbers, years, rotation=45)  # replaces the shown values on the graph axis
 
 plt.title("Rail Usage")
