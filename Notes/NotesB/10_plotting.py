@@ -5,7 +5,6 @@ plt.figure(1)  # creates a new plot/window
 
 plt.plot([1, 2, 3, 3]) # plots y against the index x
 plt.plot([1, 2, 3, 4], [12, 8, 2, 1])  # ([x points], [y points])
-
 plt.figure(2)  # new window/plot
 
 x_points = [x for x in range(1, 11)]

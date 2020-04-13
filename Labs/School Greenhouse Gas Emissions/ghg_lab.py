@@ -37,24 +37,46 @@ Maybe you can try one of the following or think up your own:
 
 Note 2:  This is a tough assignment to do on your own.  Do your best with what you have.  We will do
 '''
+import csv
+import numpy as np
+import matplotlib.pyplot as plt
 
 with open("Chicago_Energy_Benchmarking.csv") as f:
-    reader = csv.reader(f, delimiter='\t')
+    reader = csv.reader(f, delimiter=',')
     data = list(reader)
 
 titles = data.pop(0)
 print(titles)
-area_idx = header.index("Total GHG Emissions (Metric Tons CO2e)")
-emission_idx = header.index("Gross Floor Area - Buildings (sq ft)")
-property_idx = header.index("Primary Property Type")
+area_idx = titles.index("Gross Floor Area - Buildings (sq ft)")
+emission_idx = titles.index("Total GHG Emissions (Metric Tons CO2e)")
+property_idx = titles.index("Primary Property Type")
 
-data = []
-for building in data:
+data_usable = []
+for item in data:
     try:
-        int(building[emission_idx])
-        int(building[area_idx])
-        if building[property_idx] == "K-12 School":
-            if building[0] == "2018":
-                data.append(building)
+        float(item[emission_idx])
+        float(item[area_idx])
+        if item[property_idx] == "K-12 School":
+            if item[0] == "2018":
+                data_usable.append(item)
     except:
         pass
+print(data_usable)
+
+
+area = [float(school[area_idx]) for school in data_usable]
+emissions = [float(school[emission_idx]) for school in data_usable]
+names = [school[2] for school in data_usable]
+parker_idx = names.index("Francis W Parker School")
+
+plt.figure("Total GHG Emmissions v building square footage", figsize=(10, 6))  # add figsize
+plt.annotate("Francis W Parker", xy= (area[parker_idx], emissions[parker_idx]))
+plt.scatter(area, emissions)
+plt.ylabel("GHG Emissions")
+plt.xlabel("Building Square Footage")
+plt.title("Total GHG Emmissions vs. building square footage")
+
+m, b = np.polyfit(area, emissions, 1)
+area2 = np.array(area)
+plt.plot(area2, m*area2 + b, c= 'red')
+plt.show()
