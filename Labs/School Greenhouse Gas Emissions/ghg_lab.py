@@ -38,7 +38,23 @@ Maybe you can try one of the following or think up your own:
 Note 2:  This is a tough assignment to do on your own.  Do your best with what you have.  We will do
 '''
 
-with open("Chicago_Energy_Benchmarking") as f:
+with open("Chicago_Energy_Benchmarking.csv") as f:
     reader = csv.reader(f, delimiter='\t')
     data = list(reader)
 
+titles = data.pop(0)
+print(titles)
+area_idx = header.index("Total GHG Emissions (Metric Tons CO2e)")
+emission_idx = header.index("Gross Floor Area - Buildings (sq ft)")
+property_idx = header.index("Primary Property Type")
+
+data = []
+for building in data:
+    try:
+        int(building[emission_idx])
+        int(building[area_idx])
+        if building[property_idx] == "K-12 School":
+            if building[0] == "2018":
+                data.append(building)
+    except:
+        pass

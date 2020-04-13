@@ -14,7 +14,8 @@ It has been updated with 2018 data, but not yet with 2019 unfortunately
 5  Add a legend to show data represented by each of the three lines. (4pts)
 6  What trend or trends do you see in the data?  Offer a hypotheses which might explain the trend(s). Just add a comment here to explain. (2pts)
 '''
-
+#The usage of the cta has slowly decreased over time. However there has been a steeper decline in bus usage which is nearly balanced out by a mild increase in rail usage.
+#The explanation of this could be that Chicago has improved its rail system over the last decade and thus people have been more inclined to use it and have optted out of using the bus.
 import csv
 import matplotlib.pyplot as plt
 
@@ -44,9 +45,9 @@ plt.figure(1, tight_layout=True)
 
 
 
-plt.plot(year_numbers, rail, color='green', marker='*', markersize=10, linestyle='--', alpha=0.5)
-plt.plot(year_numbers, bus, color='red', marker='*', markersize=10, linestyle='--', alpha=0.5)
-plt.plot(year_numbers, total, color='blue', marker='*', markersize=10, linestyle='--', alpha=0.5)
+plt.plot(year_numbers, rail, color='green', marker='*', markersize=10, linestyle='--', alpha=0.5, label="Rail")
+plt.plot(year_numbers, bus, color='red', marker='*', markersize=10, linestyle='--', alpha=0.5, label='Bus')
+plt.plot(year_numbers, total, color='blue', marker='*', markersize=10, linestyle='--', alpha=0.5, label='Total')
 
 
 plt.axis([-1, 10, 0, 750000000])  # [xmin, xmax, ymin, ymax]
@@ -57,3 +58,4 @@ plt.xlabel("Year", color='red', fontsize=20)
 plt.ylabel("Usage")
 plt.legend()
 plt.show()
+
