@@ -38,4 +38,7 @@ Maybe you can try one of the following or think up your own:
 Note 2:  This is a tough assignment to do on your own.  Do your best with what you have.  We will do
 '''
 
+with open("Chicago_Energy_Benchmarking") as f:
+    reader = csv.reader(f, delimiter='\t')
+    data = list(reader)
 
