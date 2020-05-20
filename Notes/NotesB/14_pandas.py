@@ -58,7 +58,7 @@ import pandas as pd
 x = 5
 x  # in ipython/console, this automatically prints
 
-df = pd.read_csv('/Users/alee/PycharmProjects/P2_SP20/Notes/NotesB/world_cup_matches.csv')  # use full path when working in console
+df = pd.read_csv('/Users/james/PycharmProjects/P2_SP20/Notes/NotesB/world_cup_matches.csv')  # use full path when working in console
 
 
 # iloc (only useful for index number)
