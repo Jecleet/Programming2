@@ -43,8 +43,6 @@ print(total)
 
 plt.figure(1, tight_layout=True)
 
-
-
 plt.plot(year_numbers, rail, color='green', marker='*', markersize=10, linestyle='--', alpha=0.5, label="Rail")
 plt.plot(year_numbers, bus, color='red', marker='*', markersize=10, linestyle='--', alpha=0.5, label='Bus')
 plt.plot(year_numbers, total, color='blue', marker='*', markersize=10, linestyle='--', alpha=0.5, label='Total')

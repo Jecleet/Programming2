@@ -60,7 +60,7 @@ x  # in ipython/console, this automatically prints
 
 df = pd.read_csv('/Users/james/PycharmProjects/P2_SP20/Notes/NotesB/world_cup_matches.csv')  # use full path when working in console
 
-
+print('pi')
 # iloc (only useful for index number)
 df.iloc[3:6]  # look at 3, 4, 5 matches
 df.iloc[3:6, [4, 7]]   # cols 4 and 7 for index/rows 3to5

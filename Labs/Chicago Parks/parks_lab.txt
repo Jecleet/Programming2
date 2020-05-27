@@ -12,7 +12,6 @@ They get tougher as you go.  If you get stuck, just guess and skip it.
 AND NOW... JUST A FEW QUESTIONS
 
 How many different Chicago Parks are represented by this dataset?
-
 514
 
 
